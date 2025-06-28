@@ -5,15 +5,69 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edit_text_id"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="⁠"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_black_text" />
+
+    <Button
+        android:id="@+id/button_black_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Чёрный текст"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_id"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/button_red_text"/>
+
+    <Button
+        android:id="@+id/button_red_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Красный текст"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_id"
+        app:layout_constraintStart_toEndOf="@id/button_black_text"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/button_to8sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Размер - 8sp"
+        app:layout_constraintTop_toBottomOf="@id/button_black_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_to24sp"/>
+
+    <Button
+        android:id="@+id/button_to24sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Размер - 24sp"
+        app:layout_constraintTop_toBottomOf="@id/button_red_text"
+        app:layout_constraintStart_toEndOf="@id/button_to8sp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/button_white_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Белый фон"
+        app:layout_constraintTop_toBottomOf="@id/button_to8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_yellow_background"/>
+
+    <Button
+        android:id="@+id/button_yellow_background"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Жёлтый фон"
+        app:layout_constraintTop_toBottomOf="@id/button_to24sp"
+        app:layout_constraintStart_toEndOf="@id/button_white_background"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
