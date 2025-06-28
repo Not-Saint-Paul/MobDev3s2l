@@ -1,10 +1,14 @@
 package com.example.mobdev_3s_2l
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +19,19 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        Timber.plant(Timber.DebugTree())
+
+        val editText = findViewById<EditText>(R.id.edit_text_id)
+        val buttonLog = findViewById<Button>(R.id.button_log)
+        val buttonTimber = findViewById<Button>(R.id.button_timber)
+
+        buttonLog.setOnClickListener {
+            Log.v("V", editText.text.toString())
+        }
+
+        buttonTimber.setOnClickListener {
+            Timber.v(editText.text.toString())
         }
     }
 }
